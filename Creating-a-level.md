@@ -25,40 +25,40 @@ A Cytoid level should, at bare minimum, consist of:
 
 # level.json
 
-Below is a sample `level.json` file:
+Below we use the `level.json` file from [an user level]() for demonstrative purposes:
 
 ```json
 {
   
-  "format": "beta", 
-  "version": 1,
+  "version": 1, # Allows versioning of the level. Must be an integer.
   
-  "title": "Hopes and Dreams",
-  "composer": "Toby Fox",
-  "illustrator": "masyu_0331",
-  "charter": "Decnoe",
+  "id": "decnoe.hopes_and_dreams", # An unique identifier of the level. More explanations below.
+  "title": "Hopes and Dreams", # Title of the level. Preferably, use the music title.
+  "artist": "Toby Fox", # Name of the music artist.
+  "illustrator": "masyu_0331", # Name of the background illustrator.
+  "charter": "Decnoe", # Name of the charter, i.e. chart creator.
   
   "music": {
-    "path": "HnD.mp3"
+    "path": "Hopes and Dreams.mp3" # Relative path to the music file.
   },
   "music_preview": {
-    "path": "preview.mp3"
+    "path": "preview.mp3" # Relative path to the music preview file.
   },
   "background": {
-    "path": "background.jpg"
+    "path": "background.jpg" # Relative path to the background image file.
   },
-  "charts": [
+  "charts": [ # Here you can define at least one and at most three charts.
     {
-      "type": "easy",
-      "difficulty": 8,
-      "path": "chart.easy.txt"
+      "type": "easy", # Type of the chart. Currently available types: "easy", "hard" and "extreme", all in lowercase.
+      "difficulty": 8, # If you were to put your chart into Cytus, what difficulty would you assign for it? --This option is for that. Can be any integer, even beyond 9.
+      "path": "chart.easy.txt" # Relative path to the chart text file.
     },
     {
       "type": "hard",
       "difficulty": 9,
       "path": "chart.hard.txt",
       "music_override" : {
-        "path": "HnD B.mp3"
+        "path": "Hopes and Dreams (Alt).mp3" # You can choose to override the music used in this difficulty. Similar to hidden songs of Cytus.
       }
     }
   ]
@@ -66,16 +66,30 @@ Below is a sample `level.json` file:
 }
 ```
 
+The folder structure should be something like this:
+
 ```
 .
-├── dir1
-│   ├── file11.ext
-│   └── file12.ext
-├── dir2
-│   ├── file21.ext
-│   ├── file22.ext
-│   └── file23.ext
-├── dir3
 ├── background.jpg
+├── chart.easy.txt
+├── chart.hard.txt
+├── Hopes and Dreams.mp3
+├── Hopes and Dreams (Alt).mp3
 └── level.json
 ```
+
+Although it may seem obvious, filenames are not hardcoded as `background.jpg`, `chart.xxx.txt`; you can change them to whatever you like, just make sure the relative paths in your `level.json` point to the correct files.
+
+# Unique identifier (`id`)
+
+The `id` property in `level.json` is not necessary for local Cytoid gameplay, but required for uploading your level on [CytoidDB](cytoid.io/browse). It is used as an unique identifier for your level, as properties like `title` would easily have duplicates. (For coders, it is `package` in Java or `namespace` in C++. Borrowed concepts!)
+
+Your `id` must only contain `a~z`, `0~9` and `.` only. These are valid `id`s:
+
+    ✅
+    ✅
+    ✅
+
+    ❎
+    ❎
+    ❎
