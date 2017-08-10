@@ -1,64 +1,64 @@
-# Introduction
+# 简介
 
-A Cytoid level is essentially custom gameplay elements (music, background, info...) archived into a `.cytoidlevel` file. By default, `.cytoidlevel` files will be automatically opened and imported in Cytoid. They are similar to `.osz` files of [osu!](https://osu.ppy.sh/help/wiki/osu!_File_Formats).
+一个 Cytoid 关卡实际就是将所有自制元素（音乐、背景、关卡信息...）打包成一个 `.cytoidlevel` 文件。`.cytoidlevel` 格式的文件可以直接在 Cytoid 中打开和导入，有点像 [osu!](https://osu.ppy.sh/help/wiki/osu!_File_Formats) 里的 `.osz` 曲包文件。
 
-A Cytoid level should, at bare minimum, consist of:
-- **a music file**
+一个 Cytoid 关卡至少由以下四项组成：
+- **音乐文件**
 
-    Currently only the `.mp3` format is supported. If the file does not play correctly in game, please use a file converter to convert the file into the standard MPEG format.
+    目前仅支持 `.mp3` 格式。如果在 Cytoid 里无法正常播放，请用格式转换工具将文件转换成 `MPEG` 格式。
 
-    It is recommended to keep the file size below 3 MB, as larger files take significantly more time to load.
+    建议文件小于 3 MB，否则加载时间会明显变长。并且**强烈建议**剪一段 30 秒，大小压缩在 500 KB 以内的音乐试听文件。
 
-- **a background image file**
+- **背景文件**
 
-    Currently `.jpg` and `.png` formats are supported.
+    目前支持 `.jpg` 和 `.png` 格式。
 
-    It is recommended to use a `.jpg` file and keep the file size below 1 MB.
+    建议选择小于 2 MB 的 `.jpg` 文件。分辨率在 1920px * 1080px 以上为佳。
 
-- **a chart text file**
+- **谱面文件**
 
-    Currently only the [Rayark v2 modified](https://github.com/TigerHix/Cytoid/wiki/Chart-formats) format is supported. 
+    目前仅支持 [Rayark v2 改](https://github.com/TigerHix/Cytoid/wiki/Chart-formats) 格式。
 
-- **a `level.json` file**
+- **`level.json` 关卡信息文件**
 
-    This [JSON](https://json.org) file declares necessary information of the level.
+    此 [JSON](https://json.org) 文件声明必要的关卡信息。
 
 # level.json
 
-Below we use the `level.json` file from [an user level]() for demonstrative purposes:
+以下我们用一个[示例]()的 `level.json` 来解说吧：
 
 ```
 {
   
-  "version": 1, // Allows versioning of the level. Must be an integer.
+  "version": 1, // 谱面的版本。必须为整数。
   
-  "id": "decnoe.hopes_and_dreams", // An unique identifier of the level. More explanations below.
-  "title": "Hopes and Dreams", // Title of the level. Preferably, use the music title.
-  "artist": "Toby Fox", // Name of the music artist.
-  "illustrator": "masyu_0331", // Name of the background illustrator.
-  "charter": "Decnoe", // Name of the charter, i.e. chart creator.
+  "id": "decnoe.hopes_and_dreams", // 关卡的唯一标识符。详情请见下文。
+  "title": "Hopes and Dreams", // 关卡的标题。一般来说，应该是音乐的标题。
+  "artist": "Toby Fox", // 曲师的名字。
+  "illustrator": "masyu_0331", // 画师的名字。
+  "charter": "Decnoe", // 谱师的名字。
   
   "music": {
-    "path": "Hopes and Dreams.mp3" // Relative path to the music file.
+    "path": "Hopes and Dreams.mp3" // 音乐文件的相对路径。
   },
   "music_preview": {
-    "path": "preview.mp3" // Relative path to the music preview file.
+    "path": "preview.mp3" // 音乐试听文件的相对路径。
   },
   "background": {
-    "path": "background.jpg" // Relative path to the background image file.
+    "path": "background.jpg" // 背景文件的相对路径。
   },
-  "charts": [ // Here you can define at least one and at most three charts.
+  "charts": [ // 在此最多可以定义三个谱面。
     {
-      "type": "easy", // Type of the chart. Currently available types: "easy", "hard" and "extreme", all in lowercase.
-      "difficulty": 8, // If you were to put your chart into Cytus, what difficulty would you assign for it? --This option is for that. Can be any integer, even beyond 9.
-      "path": "chart.easy.txt" // Relative path to the chart text file.
+      "type": "easy", // 谱面的类型："easy"，"hard" 或者 "extreme"，注意全部为小写。
+      "difficulty": 8, // 如果将谱面放到 Cytus 里，你觉得它是哪个等级？填 9 以上也是可以哒。
+      "path": "chart.easy.txt" // 谱面文件的相对路径。
     },
     {
       "type": "hard",
       "difficulty": 9,
       "path": "chart.hard.txt",
       "music_override" : {
-        "path": "Hopes and Dreams (Alt).mp3" // You can choose to override the music used in this difficulty. Similar to hidden songs of Cytus.
+        "path": "Hopes and Dreams (Alt).mp3" // 你可以覆盖掉某个难度的音乐文件，隐藏曲什么的。
       }
     }
   ]
@@ -66,7 +66,7 @@ Below we use the `level.json` file from [an user level]() for demonstrative purp
 }
 ```
 
-And the folder structure:
+目录结构：
 
 ```
 .
@@ -78,40 +78,40 @@ And the folder structure:
 └── level.json
 ```
 
-It may seem obvious, but filenames are not hardcoded as `background.jpg`, `chart.xxx.txt`; you can change them to whatever you like, just make sure the relative paths in your `level.json` point to the correct files.
+虽然应该很明显，不过文件名并不需要参照 `background.jpg` 和 `chart.xxx.txt` 这样的格式。只要 `level.json` 里相对路径指向正确的文件就可以了。
 
-# Unique identifier
+# 唯一标识符
 
-The `id` property in `level.json` is not necessary for local Cytoid gameplay, but required for uploading your level on [CytoidDB](cytoid.io/browse). It is the unique identifier for your level, as properties like `title` would easily have duplicates. (For coders, it is essentially a `package` in Java or a `namespace` in C++. Borrowed concepts!)
+`level.json` 中的 `id` 参数在本地测试时无需填写，除非你想上传到 [CytoidDB](cytoid.io/browse)（顺带一提，强烈鼓励上传分享喔 ヽ(●´∀`●)ﾉ）。`id` 相当于关卡的唯一标识符，毕竟总不能用音乐标题作为辨认——想象一下十个谱师都做同一首曲子的情况。（有编程经验的同学，`id` 实际上就是 Java 里的 `package` 或 C++ 里的 `namespace`。）
 
-Your `id` must contain `a~z`, `0~9`, `.` and `_` only. These are valid `id`s:
+`id` 必须仅由 `a~z`、`0~9`、`.` 和 `_` 组成。这些 `id` 是合法的：
 
 - io.cytoid.tutorial
 - john_doe.freedom_dive
 - decnoe.undertale.hopes_and_dreams
 
-# Create your first level
+# 创建你的第一个关卡
 
-Now we are done with explanations, let's try creating a level and import it into Cytoid. The steps are simple:
+解释了这么多，试试创建一个关卡并导进 Cytoid 吧：
 
-1. Grab your music, background and chart files.
-2. Create the `level.json` file. Just refer to above!
+1. 将音乐、背景、谱面文件全部塞一个文件夹里。建议文件夹名称为关卡的唯一标识符。
+2. 填写 `level.json` 文件，你可以将上面的复制一份再作修改。
 
-That's it! Now you just need to copy them into your Cytoid data folder. Note that it is recommended to create an appropriately named folder and drag all the files in, to be better organized.
+这就完成了！最后只需要复制到设备里就可以了。
 
-- On Android: Copy the enclosing folder into the `Cytoid` folder of your external storage (Usually `sdcard`).
-- On iOS: Connect your device and open iTunes, navigate to `Apps -> iTunes File Sharing -> Cytoid`, drag the enclosing folder into the box at the right.
+- Android：将关卡文件夹拖到外部存储空间（通常是 `sdcard`）的 `Cytoid` 文件夹里。
+- iOS：连接设备，打开 iTunes，然后 `应用 -> iTunes 文件分享 -> Cytoid`，将关卡文件夹拖到右边的文件目录里。
 
-Open Cytoid and you should see your level in the level selection menu, beautifully presented. 👍
+打开 Cytoid，你就可以见到你的关卡优雅地出现在关卡选择菜单了。👍
 
-# Upload on CytoidDB
+# 上传到 CytoidDB
 
-[CytoidDB](cytoid.io/browse) is a place for sharing your levels with other players. Chart information will be [automatically parsed and displayed to visitors](cytoid.io/browse/), and we do not have ads! (?)
+[CytoidDB](cytoid.io/browse) 是一个分享自制关卡的地方。谱面信息会[自动从关卡文件中读取展示](http://cytoid.io/browse/decnoe.undertale.chime)，并且不像普通网盘全是广告（。
 
-The steps are dead simple as well:
+步骤也很简单：
 
-1. Compress all the files into a `.zip` file. On latest operating systems, you should be able to do it by simply selecting all the files, right-click on them, and select "Compress" from the context menu. Do not compress the enclosing folder - just compress the files directly so that they are at the root of your `.zip` archive.
-2. Create an account.
-3. Start uploading. The uploader will inform you anything wrong with your level file, and if there's no errors, you will be brought to your very own level page.
+1. 将所有关卡文件压缩成 `.zip`。确保压缩关卡文件本身而不是关卡文件夹，因为 `level.json` 应该在压缩包的根目录下。
+2. 创建一个 CytoidDB 账户。
+3. 开始上传吧。上传页面会告诉你你的关卡文件出了什么问题（如果有的话）。
 
-Now you can simply share the page to others; upon downloading the `.cytoidlevel` file (which by the way, is just your `.zip` file with the file extension changed), they can open it with Cytoid and your level will be automatically imported into the data folder. Isn't that nice?
+然后将页面地址分享出去即可。CytoidDB 会将你的 `.zip` 改后缀名为 `.cytoidlevel`，这样别人下载的时候就可以直接打开导入到 Cytoid 了。方便吧？
