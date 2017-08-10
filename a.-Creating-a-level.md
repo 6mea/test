@@ -7,7 +7,7 @@ A Cytoid level should, at bare minimum, consist of:
 
     Currently only the `.mp3` format is supported. If the file does not play correctly in game, please use a file converter to convert the file into the standard MPEG format.
 
-    It is recommended to keep the file size below 3 MB, as larger files take significantly more time to load.
+    It is recommended to keep the file size below 3 MB, as larger files take significantly more time to load. Also it is **strongly recommended** to make a 30-seconds preview clip that is compressed under 500 KB.
 
 - **a background image file**
 
