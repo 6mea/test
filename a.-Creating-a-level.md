@@ -17,7 +17,7 @@ A Cytoid level should, at bare minimum, consist of:
 
 - **a chart text file**
 
-    Currently only the [Rayark v2 modified](https://github.com/TigerHix/Cytoid/wiki/Chart-formats) format is supported. 
+    Currently only the Cytus format, or [Rayark v2 modified](https://github.com/TigerHix/Cytoid/wiki/Chart-formats) format is supported. **If you already have a Cytus custom chart, you do not need to modify the chart at all.**
 
 - **a `level.json` file**
 
