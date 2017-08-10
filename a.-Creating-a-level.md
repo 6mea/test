@@ -13,7 +13,7 @@ A Cytoid level should, at bare minimum, consist of:
 
     Currently `.jpg` and `.png` formats are supported.
 
-    It is recommended to use a `.jpg` file and keep the file size below 1 MB.
+    It is recommended to use a `.jpg` file and keep the file size below 2 MB. Resolution above 1920px * 1080px is preferred.
 
 - **a chart text file**
 
