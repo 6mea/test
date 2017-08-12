@@ -25,7 +25,7 @@
 
 # level.json
 
-以下我们用一个[示例]()的 `level.json` 来解说吧：
+以下详细分析一个示例 `level.json` 文件。别担心，超简单。
 
 ```
 {
@@ -82,7 +82,7 @@
 
 # 唯一标识符
 
-`level.json` 中的 `id` 参数在本地测试时无需填写，除非你想上传到 [CytoidDB](cytoid.io/browse)（顺带一提，强烈鼓励上传分享喔 ヽ(●^∀^●)ﾉ）。`id` 相当于关卡的唯一标识符，毕竟总不能用音乐标题作为辨认——想象一下十个谱师都做同一首曲子的情况。（有编程经验的同学，`id` 实际上就是 Java 里的 `package` 或 C++ 里的 `namespace`。）
+`level.json` 中的 `id` 参数在本地测试时无需填写，除非你想上传到 [CytoidDB](http://cytoid.io/browse/)（顺带一提，强烈鼓励上传分享喔 ヽ(●^∀^●)ﾉ）。`id` 相当于关卡的唯一标识符，毕竟总不能用音乐标题作为辨认——想象一下十个谱师都做同一首曲子的情况。（有编程经验的同学，`id` 实际上就是 Java 里的 `package` 或 C++ 里的 `namespace`。）
 
 `id` 必须仅由 `a~z`、`0~9`、`.` 和 `_` 组成。这些 `id` 是合法的：
 
@@ -95,9 +95,9 @@
 解释了这么多，试试创建一个关卡并导进 Cytoid 吧：
 
 1. 将音乐、背景、谱面文件全部塞一个文件夹里。建议文件夹名称为关卡的唯一标识符。
-2. 填写 `level.json` 文件，你可以将上面的复制一份再作修改。
+2. 创建 `level.json` 文件，不妨下载一份[模板](http://cytoid.io/level.json)，填填空，小修小补，就OK了。
 
-这就完成了！最后只需要复制到设备里就可以了。
+最后只需要复制到设备里就大功告成：
 
 - Android：将关卡文件夹拖到外部存储空间（通常是 `sdcard`）的 `Cytoid` 文件夹里。
 - iOS：连接设备，打开 iTunes，然后 `应用 -> iTunes 文件分享 -> Cytoid`，将关卡文件夹拖到右边的文件目录里。
@@ -106,7 +106,7 @@
 
 # 上传到 CytoidDB
 
-[CytoidDB](cytoid.io/browse) 是一个分享自制关卡的地方。谱面信息会[自动从关卡文件中读取展示](http://cytoid.io/browse/decnoe.undertale.chime)，并且不像普通网盘全是广告（。
+[CytoidDB](http://cytoid.io/browse) 是一个分享自制关卡的地方。谱面信息会[自动从关卡文件中读取展示](http://cytoid.io/browse/io.cytoid.glow_dance)，并且不像普通网盘全是广告（。
 
 步骤也很简单：
 
