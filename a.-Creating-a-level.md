@@ -82,7 +82,7 @@ It may seem obvious, but filenames are not hardcoded as `background.jpg`, `chart
 
 # Unique identifier
 
-The `id` property in `level.json` is not necessary for local Cytoid gameplay, but required for uploading your level on [CytoidDB](cytoid.io/browse). It is the unique identifier for your level, as properties like `title` would easily have duplicates. (For coders, it is essentially a `package` in Java or a `namespace` in C++. Borrowed concepts!)
+The `id` property in `level.json` is not necessary for local Cytoid gameplay, but required for uploading your level on [CytoidDB](http://cytoid.io/browse/) (Please do!). It is the unique identifier for your level, as properties like `title` would easily have duplicates. (For coders, it is essentially a `package` in Java or a `namespace` in C++. Borrowed concepts!)
 
 Your `id` must contain `a~z`, `0~9`, `.` and `_` only. These are valid `id`s:
 
