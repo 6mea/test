@@ -106,7 +106,7 @@ Open Cytoid and you should see your level in the level selection menu, beautiful
 
 # Upload on CytoidDB
 
-[CytoidDB](http://cytoid.io/browse) is a place for sharing your levels with other players. Chart information will be [automatically parsed and displayed to visitors](http://cytoid.io/browse/), and we do not have ads! (?)
+[CytoidDB](http://cytoid.io/browse) is a place for sharing your levels with other players. Chart information will be [automatically parsed and displayed to visitors](http://cytoid.io/browse/io.cytoid.glow_dance), and we do not have ads! (?)
 
 The steps are simple as well:
 
