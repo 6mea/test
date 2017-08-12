@@ -25,7 +25,7 @@ A Cytoid level should, at bare minimum, consist of:
 
 # level.json
 
-Below we use the `level.json` file from [an user level]() for demonstrative purposes:
+Below we analyze a sample `level.json` file. Don't worry, it's easy stuff.
 
 ```
 {
@@ -95,7 +95,7 @@ Your `id` must contain `a~z`, `0~9`, `.` and `_` only. These are valid `id`s:
 Now we are done with explanations, let's try creating a level and import it into Cytoid. The steps are simple:
 
 1. Grab your music, background and chart files.
-2. Create the `level.json` file. Just refer to above!
+2. Create the `level.json` file. Use the [template](http://cytoid.io/level.json)!
 
 That's it! Now you just need to copy them into your Cytoid data folder. Note that it is recommended to create an appropriately named folder and drag all the files in, to be better organized.
 
@@ -106,9 +106,9 @@ Open Cytoid and you should see your level in the level selection menu, beautiful
 
 # Upload on CytoidDB
 
-[CytoidDB](cytoid.io/browse) is a place for sharing your levels with other players. Chart information will be [automatically parsed and displayed to visitors](cytoid.io/browse/), and we do not have ads! (?)
+[CytoidDB](http://cytoid.io/browse) is a place for sharing your levels with other players. Chart information will be [automatically parsed and displayed to visitors](http://cytoid.io/browse/), and we do not have ads! (?)
 
-The steps are dead simple as well:
+The steps are simple as well:
 
 1. Compress all the files into a `.zip` file. On latest operating systems, you should be able to do it by simply selecting all the files, right-click on them, and select "Compress" from the context menu. Do not compress the enclosing folder - just compress the files directly so that they are at the root of your `.zip` archive.
 2. Create an account.
