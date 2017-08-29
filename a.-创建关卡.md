@@ -17,7 +17,7 @@
 
 - **谱面文件**
 
-    目前仅支持 Cytus 格式，或 [Rayark v2 改](https://github.com/TigerHix/Cytoid/wiki/Chart-formats) 格式。**现有的自制谱面无需任何修改即可被 Cytoid 读取。**
+    目前仅支持 Cytus 格式，或 [Rayark v2 改](https://github.com/TigerHix/Cytoid/wiki/Chart-formats) 格式。任何制谱工具应该都有输出到官方格式的方法。**现成的、可以被 Cytus 读取的自制谱面，无需任何修改即可被 Cytoid 读取。**
 
 - **`level.json` 关卡信息文件**
 
