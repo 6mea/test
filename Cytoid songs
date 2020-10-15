@@ -1,0 +1,46 @@
+{
+  
+  "version": 1, //
+  
+  "id": "Scenaria.BLAST", //
+  "title": "BLAST", //
+  "artist": "Tokyo Machine", //
+  "illustrator": "masyu_0331", //
+  "charter": "Scenaria", //
+  
+  "music": {
+    "path": "BLAST.mp3" // Relative path to the music file.
+  },
+  "music_preview": {
+    "path": "forcytoid.mp3" // Relative path to the music preview file.
+  },
+  "background": {
+    "path": "artworks-000211605906-ldktin-t500x500.jpg" // Relative path to the background image file.
+  },
+  "charts": [ //
+    {
+      "type": "easy", //
+      "difficulty": 3, //
+      "path": "chart.easy.txt" //
+    },
+    {
+      "type": "expert",
+      "difficulty": 15+,
+      "path": "chart.hard.txt",
+      "music_override" : {
+        "path": BLAST (Alt).mp3" //
+    }
+  ]
+  
+}
+
+
+
+
+.
+├── artworks-000211605906-ldktin-t500x500.jpg
+├── chart.easy.txt
+├── chart.expert.txt
+├── BLAST.mp3
+├── BLAST (Alt).mp3
+└── level.json
